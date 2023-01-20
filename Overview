@@ -1,0 +1,110 @@
+Part 1: OHKO check
+	default option
+	
+	UI basics
+		boss on left, user on right
+		battlefield conditions
+		damage calculations
+	
+	boss options
+		stars - determines level, also hp multiplier?
+		pokemon
+		tera
+		IVs - default "unknown" assume perfect HP, Def, and SpDef
+			popdown option to manually select IVs by value or by judge keywords
+				if keywords, assume highest in range
+		nature - unknown should be a custom 'nature' that assumes +Def and +SpDef
+		ability - unknown should only warn about ability variation if it actually makes a difference
+			show multiple damage ranges with ability clearly shown as the difference
+	
+	user options
+		pokemon - pop down selector with adjacent recommendations pop down selector
+			grey out recommendations if no boss selected VS general recommendations for common OHKO mons
+		tera type - default to first type
+			tick box for terrastalized
+		level - default 100
+		IVs/EVs/Total - default "best" assume perfect IV and full EV for Att and SpAtt
+			popdown option to manually fill in by value or by judge keywords
+				Base is calculated from pokemon and level, can't edit
+				IVs default to max value, type in value or judge keyword
+					if keyword, assume lowest in range
+				EVs default to max in Att and SpAtt
+					allow entering too many total EV, but warn
+				Totals can be edited, if value is input for total, change IV/EV to "-"
+		nature - default "best" should be a custom 'nature' that assumes +Att and +SpAtt
+		ability - default to hidden ability
+			pop down show standard 3, gap, then full list
+		item
+	
+	battlefield conditions
+		terrain
+		weather
+		chinese quad effects
+		helping hand
+			option to click for 1/2/3, warn that it doesn't stack if they chose 2/3
+		steely spirit - 1/2/3
+		power spot
+			does this stack? does it reach whole team?
+		status
+		stat changes
+		attack cheer
+		charge
+	
+	move
+		default to highest power move known at level 100
+		sort moves alphabetically, 4 lists?
+			level
+				alphabetical VS by level?
+				if level is set below 100, grey out moves that won't be learned yet
+			egg moves
+			TM
+				include TM number for searching
+			can't learn
+				if this is included, they will be all grey or something
+				some kind of warning/condition for copying other moves?
+				probably just skip this section and have an extra popdown for moves like copycat
+		show power, type, and phys/spec
+			can these be changed?
+			special cases come with extra option VS always option to change?
+		crit tick box
+		option to add move to compare
+			max 10 compare?
+			X to left of 2-10 for easy removal
+		show damage range to right of selected move as % of total boss HP
+		optional start boss at less than 100% ?
+			warn if shield would come up
+	
+	save loadout option includes boss and user
+
+
+
+
+Part 2: Raid sim
+	advanced option - develop this after Part 1 is done
+	
+	UI Basics
+		boss on left, user(s) on right
+			4 move slots/user
+		turn order
+	
+	boss options - same as above
+		stars - determines level, also hp multiplier?
+		pokemon
+		tera
+		IVs - default "unknown" assume perfect HP, Def, and SpDef
+			popdown option to manually select IVs by value or by judge keywords
+				if keywords, assume highest in range
+		nature - unknown should be a custom 'nature' that assumes +Def and +SpDef
+		ability - unknown should only warn about ability variation if it actually makes a difference
+			show multiple damage ranges with ability clearly shown as the difference
+	
+	user(s) options
+		something something complicated backend to allow you to choose moves and then get list of pokemon recommendations
+	
+	move order
+		choose user, move, and target
+			user not necessary, but if selected, run boss attack calculations assuming most effective move against target
+		auto-insert break whenever boss would do something
+			7* seem to always use a specific move at the beginning
+			shield damage calculations
+		add randoms at some point down the line?
